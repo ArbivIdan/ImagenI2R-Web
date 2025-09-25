@@ -21,7 +21,7 @@ const ResearchAbstract = () => {
                 <span className="font-medium">{author.name}</span>
                 {author.equalContribution && <span className="text-sm text-primary">*</span>}
                 <span className="text-sm text-gray-600">
-                  {researchData.affiliations[author.affiliation]} {author.affiliation}
+                  {researchData.affiliations[author.affiliation as keyof typeof researchData.affiliations]} {author.affiliation}
                 </span>
               </div>
             ))}
