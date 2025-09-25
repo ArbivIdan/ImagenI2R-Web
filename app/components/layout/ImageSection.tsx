@@ -1,19 +1,19 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { SocialIcon } from "../SocialIcon";
-import { Toaster, toast } from "react-hot-toast";
 import { IconName } from "@fortawesome/fontawesome-svg-core";
-import { socialItems } from "../../../utils/socialItems";
 import AnimatedSection from "./AnimatedSection";
+import { SocialIcon } from "../SocialIcon";
+import { researchData } from "../../../utils/researchData";
 
 const ImageSection = () => {
-  const iconsStyle =
-    "text-white text-4xl md:text-3xl transform transition-transform duration-300 md:hover:scale-125 md:hover:rotate-12 md:hover:-translate-x-2";
+  const { socialItems } = researchData;
+  const iconsStyle = "text-white hover:text-gray-300 transition-colors duration-200 text-2xl md:text-3xl lg:text-4xl drop-shadow-lg";
 
   return (
     <section className="relative w-screen h-[50vh] flex flex-col md:flex-row md:fixed md:right-0 md:top-0 md:h-full items-center justify-center bg-slate-400 md:w-5/12">
-      <AnimatedSection className="flex md:flex-col gap-4 mb-8 md:mb-0 md:fixed md:right-0 transform md:-translate-y-1/2 md:pr-4 xl:pr-8 2xl:pr-12">
+      {/* Social Icons - positioned on the right side */}
+      <AnimatedSection className="flex md:flex-col gap-4 mb-8 md:mb-0 md:fixed md:right-0 transform md:-translate-y-1/2 md:pr-4 xl:pr-8 2xl:pr-12 z-20">
         {socialItems.map(({ link, icon }) => (
           <SocialIcon
             key={link}
@@ -23,17 +23,23 @@ const ImageSection = () => {
           />
         ))}
       </AnimatedSection>
-      <AnimatedSection className="flex items-center justify-center">
+      
+      {/* Main content - image and header */}
+      <AnimatedSection className="flex flex-col items-center justify-center space-y-6 z-10">
         <Image
-          className="md:sticky object-cover rounded-full overflow-hidden w-[65%] aspect-square md:w-56 lg:w-80 drop-shadow-2xl shadow-slate-400 md:hover:border-2 md:hover:border-sky-700 md:transition-all md:duration-200 md:hover:scale-105 z-10"
-          src="/idan_arbiv.jpeg"
-          alt="Profile Picture"
+          className="object-cover rounded-full overflow-hidden w-[65%] aspect-square md:w-56 lg:w-80 drop-shadow-2xl shadow-slate-400 md:hover:border-2 md:hover:border-sky-700 md:transition-all md:duration-200 md:hover:scale-105"
+          src="/image.png"
+          alt="Research Paper Author"
           width={800}
           height={800}
         />
+        <div className="text-center">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg">
+            The Sequential Learning Group
+          </h2>
+          <div className="w-24 h-1 bg-white mx-auto mt-3 rounded-full opacity-80"></div>
+        </div>
       </AnimatedSection>
-
-      <Toaster />
     </section>
   );
 };

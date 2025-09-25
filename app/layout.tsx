@@ -2,7 +2,15 @@ import React from 'react';
 import "./globals.css";
 import { poppins } from "../utils/fonts";
 import LayoutWrapper from "./components/layout/LayoutWrapper";
-import Head from "next/head";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking',
+  description: 'Research paper on generating realistic time series from irregular data using Time Series Transformers and vision-based diffusion models',
+  icons: {
+    icon: '/favicon.ico',
+  },
+};
 
 export default function RootLayout({
   children,
@@ -11,13 +19,6 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <Head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <title>Idan Arbiv&apos;s Portfolio</title>{" "}
-        <meta name="description" content="Welcome to my portfolio" />
-      </Head>
       <body className={poppins.className}>
         <main className="flex flex-col md:flex-row relative">
           <section className="md:w-7/12 flex flex-col">

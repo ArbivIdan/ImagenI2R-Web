@@ -9,12 +9,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
   { href: "home", label: "Home" },
-  { href: "about", label: "About" },
-  { href: "experience", label: "Experience" },
-  { href: "education", label: "Education" },
-  { href: "publications", label: "Publications" },
-  { href: "projects", label: "Projects" },
-  { href: "contact", label: "Contact" },
+  { href: "abstract", label: "Abstract" },
+  { href: "introduction", label: "Introduction" },
+  { href: "method", label: "Method" },
+  { href: "results", label: "Results" },
+  { href: "citation", label: "Citation" },
 ];
 
 const NavBar = () => {
