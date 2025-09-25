@@ -11,6 +11,10 @@
 /.next/
 /out/
 
+# git directories
+*.git/
+*.git.bfg-report/
+
 # production
 /build
 
