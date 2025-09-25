@@ -31,7 +31,14 @@ const ResearchAbstract = () => {
 
         <div className="mb-8">
           <h3 className="text-2xl font-semibold mb-4">Links</h3>
-          <div className="flex gap-4">
+          <div className="flex gap-4 flex-wrap">
+            <a 
+              href={researchData.links.neurips} 
+              className="btn btn-primary btn-outline"
+              target="_blank"
+              rel="noopener noreferrer">
+              NeurIPS 2025
+            </a>
             <a 
               href={researchData.links.github} 
               className="btn btn-primary btn-outline"

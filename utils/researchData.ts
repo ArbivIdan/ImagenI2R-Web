@@ -1,17 +1,18 @@
 export const researchData = {
   title: "A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking",
   authors: [
-    { name: "Gal Fadlon", affiliation: "Ben Gurion University", equalContribution: true },
-    { name: "Idan Arbiv", affiliation: "Ben Gurion University", equalContribution: true },
-    { name: "Nimrod Berman", affiliation: "Ben Gurion University", equalContribution: false },
-    { name: "Omri Azencot", affiliation: "Ben Gurion University", equalContribution: false }
+    { name: "Gal Fadlon", affiliation: "Ben Gurion University of the Negev", equalContribution: true },
+    { name: "Idan Arbiv", affiliation: "Ben Gurion University of the Negev", equalContribution: true },
+    { name: "Nimrod Berman", affiliation: "Ben Gurion University of the Negev", equalContribution: false },
+    { name: "Omri Azencot", affiliation: "Ben Gurion University of the Negev", equalContribution: false }
   ],
   affiliations: {
-    "Ben Gurion University": "🐪"
+    "Ben Gurion University of the Negev": "🐪"
   },
   links: {
     github: "https://github.com/azencot-group/ImagenI2R",
-    arxiv: "#"
+    arxiv: "#",
+    neurips: "https://neurips.cc/virtual/2025/poster/118491"
   },
   socialItems: [
     {
@@ -67,14 +68,12 @@ export const researchData = {
     }
   ],
   citation: {
-    bibtex: `@misc{fadlon2025diffusionmodelregulartimeseries,
+    bibtex: `@inproceedings{fadlon2025diffusionmodelregulartimeseries,
       title={A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking}, 
       author={Gal Fadlon and Idan Arbiv and Nimrod Berman and Omri Azencot},
+      booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
       year={2025},
-      eprint={TBD},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={TBD}, 
+      url={https://neurips.cc/virtual/2025/poster/118491}
 }`
   }
 };
