@@ -1,3 +1,0 @@
-export const aboutMe = {
-  description: `Hey! 👋 I'm Idan Arbiv, an Algorithm Engineer at WSC Sports specializing in Generative AI, NLP, and Deep Learning. I recently completed my M.Sc. in Computer Science at Ben Gurion University, with published research in ICML and NeurIPS. Previously, I was a Teaching Assistant in programming and distributed systems, and served as a Communications Officer in the IDF, leading tech operations with a team of 40+. I’m passionate about building advanced AI-driven services and pushing the boundaries of deep learning innovation.`
-};
