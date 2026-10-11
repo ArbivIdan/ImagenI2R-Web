@@ -2,6 +2,19 @@
 
 ![Research Banner](app/banner.png)
 
+This site hosts the project pages for our line of work on irregular time series generation:
+
+| Route | Paper | Venue |
+|---|---|---|
+| `/` | Hub page linking both papers | |
+| `/closing-the-loop` | Closing the Loop: Co-Evolving EM for Irregular Time Series Generation in Lifted Representations | NeurIPS 2026 |
+| `/imageni2r` | A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking | NeurIPS 2025 |
+
+### Adding a paper
+
+1. Add an entry to `utils/papers.ts` (it drives the hub cards, the paper tabs in the navbar and the side panel).
+2. Create `app/<slug>/page.tsx` and put its figures under `public/<slug>/`.
+
 ## 📄 Paper Information
 
 **Title**: A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking
@@ -77,25 +90,26 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 ```
 ImagenI2R-Web/
 ├── app/
-│   ├── components/          # React components
-│   │   ├── layout/         # Layout components (NavBar, Footer, etc.)
-│   │   ├── Citation.tsx    # Citation component
-│   │   ├── Hero.tsx        # Hero section
-│   │   ├── ResearchAbstract.tsx
-│   │   ├── ResearchResults.tsx
-│   │   ├── ResearchSection.tsx
-│   │   └── SocialIcon.tsx  # Social media icons
-│   ├── globals.css         # Global styles
-│   ├── layout.tsx          # Root layout
-│   └── page.tsx            # Main page
-├── public/                 # Static assets
-│   ├── *.png              # Research figures and results
-│   ├── *.pdf              # Research papers
-│   └── *.tex              # LaTeX source
+│   ├── page.tsx                  # Hub page listing all papers
+│   ├── imageni2r/page.tsx        # ImagenI2R (NeurIPS 2025)
+│   ├── closing-the-loop/page.tsx # Closing the Loop (NeurIPS 2026)
+│   ├── components/
+│   │   ├── layout/               # NavBar (paper tabs + section links), side panel, footer
+│   │   ├── hub/                  # Paper cards for the hub page
+│   │   ├── closing-the-loop/     # Sections and interactive tables for Closing the Loop
+│   │   ├── Hero.tsx, Citation.tsx, PaperLinks.tsx  # Shared by all paper pages
+│   │   └── Research*.tsx         # ImagenI2R sections
+│   ├── globals.css
+│   └── layout.tsx
+├── public/
+│   ├── closing-the-loop/         # Closing the Loop figures
+│   └── *.png, *.pdf              # ImagenI2R figures and paper
 ├── utils/
-│   ├── fonts.ts           # Font configurations
-│   ├── heroText.ts        # Hero section content
-│   └── researchData.ts    # Research data and content
+│   ├── papers.ts                 # Registry of all papers
+│   ├── closingTheLoopData.ts     # Closing the Loop content
+│   ├── closingTheLoopResults.json # Per-dataset results tables (parsed from the paper)
+│   ├── heroText.ts, researchData.ts # ImagenI2R content
+│   └── fonts.ts
 └── README.md
 ```
 
@@ -149,4 +163,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-*This website showcases research accepted to NeurIPS 2025. For the latest updates and code, visit our [GitHub repository](https://github.com/azencot-group/ImagenI2R).*
+*This website showcases research accepted to NeurIPS 2025 and NeurIPS 2026. For the latest updates and code, visit our [GitHub repository](https://github.com/azencot-group/ImagenI2R).*

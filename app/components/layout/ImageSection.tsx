@@ -4,10 +4,14 @@ import React from "react";
 import { IconName } from "@fortawesome/fontawesome-svg-core";
 import AnimatedSection from "./AnimatedSection";
 import { SocialIcon } from "../SocialIcon";
-import { researchData } from "../../../utils/researchData";
 
-const ImageSection = () => {
-  const { socialItems } = researchData;
+interface ImageSectionProps {
+  socialItems: { link: string; icon: string }[];
+  // Small line under the group name, e.g. the venue of the open paper.
+  caption?: string;
+}
+
+const ImageSection = ({ socialItems, caption }: ImageSectionProps) => {
   const iconsStyle = "text-white hover:text-gray-300 transition-colors duration-200 text-2xl md:text-3xl lg:text-4xl drop-shadow-lg";
 
   return (
@@ -38,6 +42,9 @@ const ImageSection = () => {
             The Sequential Learning Group
           </h2>
           <div className="w-24 h-1 bg-white mx-auto mt-3 rounded-full opacity-80"></div>
+          {caption && (
+            <p className="mt-3 text-white/90 text-lg tracking-wide drop-shadow">{caption}</p>
+          )}
         </div>
       </AnimatedSection>
     </section>
